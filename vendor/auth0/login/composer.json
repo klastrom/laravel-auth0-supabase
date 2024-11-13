@@ -1,0 +1,134 @@
+{
+    "name": "auth0/login",
+    "description": "Auth0 Laravel SDK. Straight-forward and tested methods for implementing authentication, and accessing Auth0's Management API endpoints.",
+    "license": "MIT",
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "auth0",
+        "authentication",
+        "authorization",
+        "login",
+        "auth",
+        "jwt",
+        "json web token",
+        "jwk",
+        "json web key",
+        "oauth",
+        "openid",
+        "secure",
+        "protect",
+        "api"
+    ],
+    "authors": [
+        {
+            "name": "Auth0",
+            "email": "support@auth0.com",
+            "homepage": "https://auth0.com/"
+        }
+    ],
+    "homepage": "https://github.com/auth0/laravel-auth0",
+    "support": {
+        "email": "support@auth0.com",
+        "issues": "https://github.com/auth0/laravel-auth0/issues",
+        "forum": "https://community.auth0.com",
+        "source": "https://github.com/auth0/laravel-auth0"
+    },
+    "require": {
+        "php": "^8.1",
+        "ext-json": "*",
+        "auth0/auth0-php": "^8.10",
+        "illuminate/contracts": "^9 || ^10",
+        "illuminate/http": "^9 || ^10",
+        "illuminate/support": "^9 || ^10",
+        "psr-discovery/all": "^1",
+        "psr/cache": "^2 || ^3"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2",
+        "friendsofphp/php-cs-fixer": "^3",
+        "mockery/mockery": "^1",
+        "nunomaduro/larastan": "^2",
+        "orchestra/testbench": "^7 || ^8",
+        "pestphp/pest": "^2",
+        "pestphp/pest-plugin-laravel": "^2",
+        "phpstan/phpstan": "^1",
+        "phpstan/phpstan-strict-rules": "^1",
+        "psalm/plugin-laravel": "^2",
+        "psr-mock/http": "^1",
+        "rector/rector": "0.17.0",
+        "squizlabs/php_codesniffer": "^3",
+        "symfony/cache": "^6",
+        "vimeo/psalm": "^5",
+        "wikimedia/composer-merge-plugin": "^2"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Auth0\\Laravel\\": [
+                "src/",
+                "deprecated/"
+            ]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Auth0\\Laravel\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true,
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": false,
+            "wikimedia/composer-merge-plugin": true
+        },
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "process-timeout": 0,
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "aliases": {
+                "Auth0": "Auth0\\Laravel\\Facade\\Auth0"
+            },
+            "providers": [
+                "Auth0\\Laravel\\ServiceProvider"
+            ]
+        },
+        "merge-plugin": {
+            "ignore-duplicates": false,
+            "include": [
+                "composer.local.json"
+            ],
+            "merge-dev": true,
+            "merge-extra": false,
+            "merge-extra-deep": false,
+            "merge-scripts": false,
+            "recurse": true,
+            "replace": true
+        }
+    },
+    "scripts": {
+        "pest": "@php vendor/bin/pest --order-by random --fail-on-risky --parallel --no-progress",
+        "pest:coverage": "@php vendor/bin/pest --order-by random --fail-on-risky --coverage --parallel --no-progress",
+        "pest:debug": "@php vendor/bin/pest --log-events-verbose-text pest.log --display-errors --fail-on-risky --no-progress",
+        "pest:profile": "@php vendor/bin/pest --profile",
+        "phpcs": "@php vendor/bin/php-cs-fixer fix --dry-run --diff",
+        "phpcs:fix": "@php vendor/bin/php-cs-fixer fix",
+        "phpstan": "@php vendor/bin/phpstan analyze",
+        "psalm": "@php vendor/bin/psalm",
+        "psalm:fix": "@php vendor/bin/psalter --issues=all",
+        "rector": "@php vendor/bin/rector process src --dry-run",
+        "rector:fix": "@php vendor/bin/rector process src",
+        "test": [
+            "@pest",
+            "@phpstan",
+            "@psalm",
+            "@rector",
+            "@phpcs"
+        ]
+    }
+}
