@@ -33,5 +33,9 @@ class SupabaseService
         return $this->getClient()->post("/rest/v1/{$table}", $data);
     }
     
-    // 他のメソッドもここに追加可能
+    // テーブル作成
+    public function createTable($table, $data)
+    {
+        return $this->getClient()->post("/rest/v1/{$table}", $data);
+    }
 }

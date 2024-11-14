@@ -1,3 +1,13 @@
+## auth0のlaravel sdkを使ってsupabaseと連携する
+▼ ハマったポイント
+app配下にServicesディレクトリを作成し、その中にSupabaseService.phpを作成
+
+web.phpにルートを追加
+接続を確認するためにdb-testルートを追加
+
+.envにsupabaseのurlとkeyを追加
+
+
 ![Auth0 Laravel SDK](https://cdn.auth0.com/website/sdks/banners/laravel-auth0-banner.png)
 
 :books: [Documentation](#documentation) — :rocket: [Getting Started](#getting-started) — :round_pushpin: [Routes](#demonstration-routes) — :wrench: [Default Changes](#changes-to-the-default-laravel-application)

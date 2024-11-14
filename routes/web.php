@@ -66,11 +66,9 @@ Route::get('/public', function () {
 Route::get('/db-test', function (SupabaseService $supabaseService) {
     // Use SupabaseService to get data
     $response = $supabaseService->getData('web_links');
-    
     if ($response->successful()) {
         $data = $response->json();
         // Process data
         var_dump($data);
     }
-
 });
